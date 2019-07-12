@@ -1,0 +1,22 @@
+﻿<Window x:Class="PAC_Characterstic_Recorder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PAC_Characterstic_Recorder"
+        mc:Ignorable="d"
+        Title="PAC Characteristic recorder" Height="70" Width="800" ResizeMode="NoResize" Icon="PAC3200.ico">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Adres ip" VerticalAlignment="Center"/>
+            <TextBox  IsEnabled="{Binding Path=NotRecording}" Text="{Binding Path=IPAddress}" Width="100" Margin="5" VerticalAlignment="Center"/>
+            <Label Content="Numer portu" VerticalAlignment="Center"/>
+            <TextBox IsEnabled="{Binding Path=NotRecording}"  Text="{Binding Path=PortNumber}" Width="100" Margin="5" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="startButton" Content="Start" IsEnabled="{Binding Path=NotRecording}" Margin="5"  Width="100" Click="StartButton_Click"/>
+            <Button x:Name="stopButton" Content="Stop" IsEnabled="{Binding Path=Recording}" Margin="5"  Width="100" Click="StopButton_Click"/>
+            <Button x:Name="saveButton" Content="Zapisz" IsEnabled="{Binding Path=ReadyToSave}" Margin="5"  Width="100" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
